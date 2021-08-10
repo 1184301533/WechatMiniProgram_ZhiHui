@@ -1,0 +1,290 @@
+<!--miniprogram/pages/me/myBirdCard/myBirdCard.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">我的鸟类卡片</view></cu-custom>
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>北戴河森林公园湿地
+    </view>
+    <view class="action"></view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{haiouP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            海鸥
+          </view>
+          <view class="cu-tag line-blue">
+            {{haiou}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{zhendanyaqueP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            震旦鸦雀
+          </view>
+          <view class="cu-tag line-blue">
+            {{zhendanyaque}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{xiangsiniaoP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            红嘴相思鸟
+          </view>
+          <view class="cu-tag line-blue">
+            {{xiangsiniao}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius margin-right shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{huatianjiP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            花田鸡
+          </view>
+          <view class="cu-tag line-blue">
+            {{huatianji}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{dandingheP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            丹顶鹤
+          </view>
+          <view class="cu-tag line-blue">
+            {{dandinghe}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view class="flex-sub radius shadow-lg">
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>昌黎七里海湿地
+    </view>
+    <view class="action"></view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{bolaoP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            棕背伯劳
+          </view>
+          <view class="cu-tag line-blue">
+            {{bolao}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{dabaoP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            大鸨
+          </view>
+          <view class="cu-tag line-blue">
+            {{dabao}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{caiyuP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            彩鹬
+          </view>
+          <view class="cu-tag line-blue">
+            {{caiyu}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{yiouP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            遗鸥
+          </view>
+          <view class="cu-tag line-blue">
+            {{yiou}}
+          </view>
+        </view>
+      </view>
+    </view> 
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>山海关石河入海口湿地
+    </view>
+    <view class="action"></view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{bailuP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            白鹭
+          </view>
+          <view class="cu-tag line-blue">
+            {{bailu}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{liuyingP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            叽咋柳莺
+          </view>
+          <view class="cu-tag line-blue">
+            {{liuying}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{heiguanP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            黑鹳
+          </view>
+          <view class="cu-tag line-blue">
+            {{heiguan}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{shijiP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            石鸡
+          </view>
+          <view class="cu-tag line-blue">
+            {{shiji}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{diaoxiaoP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            雕鸮
+          </view>
+          <view class="cu-tag line-blue">
+            {{diaoxiao}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view wx:if="{{true}}" class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{qianyaP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            白眼潜鸭
+          </view>
+          <view class="cu-tag line-blue">
+            {{qianya}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+  </view>
+  <view class="margin flex">
+    <view wx:if="{{true}}" class="bg-black flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{baiheP}});height:500rpx">
+        <view class="cu-capsule">
+          <view class="cu-tag bg-blue ">
+            白鹤
+          </view>
+          <view class="cu-tag line-blue">
+            {{baihe}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="bg-white flex-sub margin-right radius shadow-lg">
+      <view class="bg-img" style="background-image:url({{wenhaoP}});height:500rpx"></view>
+    </view>
+    <view class=" flex-sub radius shadow-lg">
+    </view>
+  </view>
+ 
+<button bindtap="queryMyBirdCard">刷新记录</button>
+
+

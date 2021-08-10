@@ -1,0 +1,19 @@
+<!--miniprogram/pages/me/about/about.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">关于</view></cu-custom>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于智喙观鸟家</view>
+  <view class='text-content'>
+    <view>Hi！欢迎使用智喙观鸟家小程序！</view>
+    <view class='margin-top-sm'>本小程序基于秦皇岛市鸟类和保护区资源及相关材料，致力于提高人们对鸟类保护的意识，为有望成为“鸟人”的朋友们提供观鸟所需的入门知识，培养观鸟兴趣。项目由秦皇岛市第七中学2015届毕业生组成的三人团队合作开发，三人分别负责程序编写、资料收集和图画绘制。</view>
+    <view class='margin-top-sm'>本小程序后台运用了小程序云开发和腾讯云AI图像识别的相关技术。前端页面样式使用了Github开源项目ColorUI的相关组件配合微信原生组件制作而成。</view>
+    <view class='margin-top-sm'>在兴趣培养模块当中的鸟类卡片、小程序LOGO为项目成员自行绘制。保护区照片（包括轮播图）为照片PS后的结果。</view>
+    <view class='margin-top-sm'>在小程序的文字和图片当中使用了以下资料当中的信息。</view>
+    <view class='margin-top-sm'>鸟类图鉴图片：http://www.cnbird.org.cn/first_pc.html</view>
+    <view class='margin-top-sm'>参考资料：</view>
+    <view class='margin-top-sm'>[1]高宏颖.野鸟寻踪：走进“中国观鸟之都”秦皇岛[M].秦皇岛：燕山大学出版社，2015.5</view>
+    <view class='margin-top-sm'>[2]刘阳，陈水华.中国鸟类观察手册[M].长沙：湖南科学技术出版社，2021.1</view>
+    <view class='margin-top-sm'>[3]闻 丞，雷进宇，韦 铭.中国鸟类观察年报2020[J/OL].http://apk.birdreport.cn/group1/files</view>
+    <view>/20210302/11/36/6/中国鸟类观察年报2020-0302.pdf.2021.4.5</view>
+    <view class='margin-top-sm'>保护野生动物，从我做起！</view>
+  </view>
+</view>

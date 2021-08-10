@@ -1,0 +1,40 @@
+/* miniprogram/pages/bird/bird.wxss */
+/*tabbar height*/
+.tab-bar-height {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+}
+/*tabbar height*/
+.swiper-item {
+	width: 100%;
+	display: block;
+	height: 100%;
+	margin: 0;
+	pointer-events: none;
+}
+.screen-swiper {
+	min-height: 1700rpx;
+}
+.barheight{
+	height: 130rpx;
+	
+}
+/*ec*/
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.container {
+	position: flex;
+  width:100%;
+  height: 1600rpx;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+

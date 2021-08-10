@@ -1,0 +1,41 @@
+<!--miniprogram/pages/myrecord/myrecord.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">我的记录</view></cu-custom>
+<block wx:for="{{queryResult}}" data-item="item" wx:for-index="idx" >
+  <!--sdsadasdasdasdasdasdasdasdsad-->
+  <view class="cu-card case {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image src="{{item.PicPath}}" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">上传时间：{{item.time}}</text>
+      </view>
+    </view>
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-blue"></text>AI检测结果如下
+      </view>
+    </view>
+    <block wx:for="{{item.picLabels}}">
+
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar lg round bg-gradual-blue">
+          <text class="avatar-text">{{item.Name}}</text>
+        </view>
+        <view class="content flex-sub">
+          
+          <view >可信程度：{{item.Confidence}}</view>
+          <view class="cu-progress round margin-top">
+            <view class="bg-gradual-blue" style="width:{{item.Confidence}}%;"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    </block> 
+    <button  bindtap='onRemove' data-_id='{{item._id}}'>删除</button>
+  </view>
+
+</view>
+  <!--asdasdasdasdasdsadsadasdasdasdas-->
+</block>

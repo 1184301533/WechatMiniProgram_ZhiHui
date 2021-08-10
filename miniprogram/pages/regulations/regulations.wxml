@@ -1,0 +1,44 @@
+<!--miniprogram/pages/regulations/regulations.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-shadeTop" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='cuIcon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+  </view>
+</view>
+
+<swiper class="screen-swiper" autoplay="true" interval="5000" duration="500">
+  <swiper-item>
+    <image src="http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mcUvxh3WXSCffbWM2bfy8vNApWlJpgjOewK6CUOKlABhZ3J.lBF5*zZfx1WX4qvUD5a0C6a2o6*h.T4WWesYVjZE!/b&bo=TgRaAk4EWgIDGTw!&rf=viewer_4&t=5" mode='aspectFill'></image>
+  </swiper-item>
+</swiper>
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.number}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> {{item.name}} </view>
+      </view>
+      <view class="bg-white padding-xl shadow-lg">
+        <view class='text-content'>
+          <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content}}</view>
+          <view wx:if="{{item.content1}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content1}}</view>
+          <view wx:if="{{item.content2}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content2}}</view>
+          <view wx:if="{{item.content3}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content3}}</view>
+          <view wx:if="{{item.content4}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content4}}</view>
+          <view wx:if="{{item.content5}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content5}}</view>
+          <view wx:if="{{item.content6}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content6}}</view>
+          <view wx:if="{{item.content7}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content7}}</view>
+          <view wx:if="{{item.content8}}" class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>{{item.content8}}</view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/me/me",
+    "pages/myrecord/myrecord",
+    "pages/takephoto/takephoto",
+    "pages/takephoto/cropper/cropper",
+    "pages/bird/bird",
+    "pages/dictionary/dictionary",
+    "pages/addWord/addWord",
+    "pages/me/myBirdCard/myBirdCard",
+    "pages/reserve/reserve",
+    "pages/me/about/about",
+    "pages/reserve/timeline/timeline",
+    "pages/stage/stage",
+    "pages/regulations/regulations"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/reserve/reserve",
+        "text": "",
+        "iconPath": "images/tabbar/map.png",
+        "selectedIconPath": "images/tabbar/map_light.png"
+      },
+      {
+        "pagePath": "pages/bird/bird",
+        "text": "",
+        "iconPath": "images/tabbar/bird.png",
+        "selectedIconPath": "images/tabbar/bird_light.png"
+      },
+      {
+        "pagePath": "pages/stage/stage",
+        "text": "",
+        "iconPath": "images/tabbar/stage.png",
+        "selectedIconPath": "images/tabbar/stage_light.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "",
+        "iconPath": "images/tabbar/me.png",
+        "selectedIconPath": "images/tabbar/me_light.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "cropper": "/pages/cropper/cropper",
+    "ec-canvas": "/ec-canvas/ec-canvas"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

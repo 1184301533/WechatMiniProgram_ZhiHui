@@ -1,0 +1,86 @@
+<!--miniprogram/pages/bird/bird.wxml-->
+<scroll-view scroll-x class="bg-gradual-blue nav">
+  <view class="cu-bar barheight"></view>
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item.title}}
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 鸟类图鉴 -->
+<swiper wx:if="{{TabCur==0}}" class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+    <view class='text-center text-sm  text-red'>{{item.scientificName}}</view>
+    <view class='text-center text-lg  text-grey'>{{item.id}}</view>
+    <view class='text-center text-sm  text-red'>{{item.name}}</view>
+    <view class="margin flex">
+      <view class="bg-black flex-sub margin-right radius shadow-lg">
+        <view class="bg-img" style="background-image:url({{item.picUrl}});height:300rpx">
+          <view class="padding-xs" >
+            <view class="cu-tag bg-{{item.color}}">{{item.IUCN}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='text-content'>
+      <view>L：{{item.L}}</view>
+      <view class='margin-top-sm'>生境：{{item.shengjing}}</view>
+      <view class='margin-top-sm'>习性：{{item.xixing}}</view>
+      <view class='margin-top-sm'>分布：{{item.fenbu}}</view>
+      <view class='margin-top-sm'>鸣声：{{item.mingsheng}}</view>
+    </view>
+  </view>
+  </swiper-item>
+</swiper>
+<!-- 鸟类图鉴 -->
+
+<!-- 分类体系 -->
+<view wx:if="{{TabCur==1}}" class="margin-xl bg-white padding-xl radius shadow-lg">
+  <view class='text-center margin-bottom text-lg  text-grey'>鸟种描述</view>
+  <view>Tips:点击以展开</view>
+  <view class="container">
+    <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>
+<!-- 分类体系 -->
+
+<!-- 身体部位 -->
+<view wx:if="{{TabCur==2}}">
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+    <view class='text-center text-lg  text-grey'>身体结构</view>
+    <view class="margin flex">
+      <view class="bg-gray flex-sub padding-sm radius shadow-lg">
+        <view class="bg-img" style="background-image:url('https://bkimg.cdn.bcebos.com/pic/8cb1cb1349540923b395659a9258d109b2de4951?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto');height:300rpx"></view>
+      </view>
+    </view>
+    <view class='text-content'>
+      <view class='text-lg  text-grey'>鸟的羽毛</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>羽毛分为正羽、绒羽。正羽的羽枝两侧密生羽小枝，羽小枝上生有钩或槽，前后相邻的羽小枝相互钩连，组成扁平而有弹性的羽片。体表的正羽，形成一层防风外壳，并使鸟体呈流线型轮廓。翼及尾上的正羽，对飞翔及平衡起决定作用。绒羽的结构特点是羽轴纤弱，羽小枝的钩状突起不发达，因而不能构成坚实的羽片，有保温作用。鸭绒就是鸭的绒羽。毛羽很细，呈毛发状，杂生在正羽与绒羽之中，在拔去正羽和绒羽之后才能见到。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的皮肤</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类的皮肤特点为松、薄，腺体不发达 ，皮脂腺是尾部的尾脂腺，其分泌的油质，经过喙的涂抹，擦在羽上，使羽片润泽不为水湿。尾指腺的分泌物，还含有麦角固醇，这种物质在紫外线照射下，能转变为维生素D。当鸟用喙涂擦羽毛时，维生素D可被皮肤吸收，有利于骨骼的生长。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的骨骼</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类适应于飞翔生活，其骨骼轻而坚固，骨片薄，长骨内中空，有气囊穿入。许多骨片合在一起，以增加坚固性。脊柱可分为颈椎、胸椎、腰椎、荐椎和尾椎五部分。颈椎数目较多，椎体呈马鞍形，使颈部极为灵活(猫头鹰头部活动可达270°)。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>最后几个胸椎、全部腰椎、荐椎和部分尾椎完全愈合在一起，称综荐骨，为腰部的坚强支柱。肋骨上有钩状突，互相钩接，使胸廓更为坚固。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>前肢变为翼，各骨排成一直线，骨间有能动的关节，末端的腕骨、掌骨、指骨愈合变形，使翼扇动时成为一个整体。肩带由肩胛骨、乌喙骨和锁骨组成。细而有弹性的锁骨呈“V”字形，它能在鼓翼时阻碍左右乌喙骨的靠拢，也能增强肩带的弹性。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类的整个体重落在后肢，后肢骨骼强大，和其他陆栖脊椎动物的后肢骨相比，鸟类跗骨延伸，起到增加弹性的作用。鸟类通常具四趾。在成鸟，腰带的髂骨、坐骨、耻骨三骨片以及综荐骨愈合成一个整体，增加了腰带的坚固性。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的肌肉</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类与飞翔有关的胸肌特别发达，约占身体质量的1/5，它能发出强大的动力，牵引翼的扇动。而背部肌肉退化，这一点和鱼类正相反。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟的胸肌可分为大胸肌和小胸肌两种。前者起于龙骨突，止于肱骨的腹面，收缩时，使翼下降；后者起于龙骨突，而以长的肌腱穿过由锁骨、乌喙骨和肩胛骨所构成的三骨孔，止于肱骨近端的背面，收缩时使翼上举。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>后肢的肌肉，集中在大腿的上部，而各以长的肌腱连到趾上。这样，支配前肢和后肢运动的肌肉都集中于身体的中心部分，这对于飞翔时保持身体重心的稳定性有重要意义。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的消化系统</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>现代鸟类缺齿，咀嚼功能由砂囊代替。雌鸽在生殖时期，嗉囊壁能分泌“鸽乳”用来喂养雏鸽。鸟类的消化腺(肝、胰)很发达，它们分别分泌胆汁和胰液并注入十二指肠，参与小肠内的消化作用。家鸽无胆囊，而鸡、鸭等大多数鸟类都有胆囊。鸟类的消化能力强，食量大而不经饿，这是与鸟类飞翔时能量消耗大有关的。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的神经系统</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类的大脑、小脑、中脑都很发达。大脑半球较大，这主要是由于大脑底部纹状体的增大。在鸟类，纹状体是管理运动的高级部位，也和一些复杂的生活习性相关。鸟类的大脑皮层并不发达，小脑很发达，这与鸟类飞翔运动的协调和平衡相关。中脑在背部构成一对发达的视叶。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>在鸟类的感觉器官中，最发达的是空中飞翔时起重要作用的视觉器官，而嗅觉器官不发达。鸟眼依靠发达的睫状肌可以迅速地调节视力，由远视改变为近视。因此，当鸟在树木中疾飞时，从未和树枝相碰；或由高空俯冲到地面觅食时，也能在一瞬间由“远视眼”调整为“近视眼”。鸟眼的瞬膜发达，飞行时遮盖眼球，起保护作用。</view>
+      <view class='margin-top-sm text-lg  text-grey'>鸟的排泄和生殖系统</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类的肾脏十分大，可占体重的2%以上，在比例上甚至超过哺乳类的肾脏。肾脏之所以发达，是与鸟类的新陈代谢相关的。鸟类无膀胱，尿中水分较少，呈白色浓糊状，随粪排出而不单独排尿。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸽与大多数鸟类一样，无外交接器(鸵鸟、鸭、鹅等有交接器)。它们在交配时，雌雄鸽的泄殖腔孔相互接触，精液进入雌体而行体内受精。卵成熟后，破卵巢壁而出，被吸入输卵管的喇叭口内，如遇有精子，则在此处受精。卵无论受精与否，沿输卵管下行时，都被裹上蛋白，然后又加上卵壳膜，最后在子宫处加上石灰质的蛋壳。鸽的受精卵，孵化期约16 d，鸡约21 d，鸭约28 d。</view>
+
+    </view>
+  </view>
+</view>
+
+<!-- 身体部位 -->
+<view class="tab-bar-height"></view>

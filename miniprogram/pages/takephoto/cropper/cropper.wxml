@@ -1,0 +1,14 @@
+<!--miniprogram/pages/takephoto/cropper/cropper.wxml-->
+<!-- <view class='body'> -->
+<view class="body">
+    <cropper id='cropper' class='stage'></cropper>
+  
+
+<view class='padding flex flex-direction blackbg'>
+<button class="cu-btn bg-darkGray margin-bottom-lg lg" bindtap="fnCancel">取消</button>
+<button class="cu-btn bg-gradual-blue margin-bottom-lg lg" bindtap="fnSubmit">确定</button>
+</view>
+
+
+</view>
+

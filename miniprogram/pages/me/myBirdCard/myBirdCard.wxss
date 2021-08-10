@@ -1,0 +1,4 @@
+/* miniprogram/pages/me/myBirdCard/myBirdCard.wxss */
+.birdCard{
+  border-radius:50%;
+}

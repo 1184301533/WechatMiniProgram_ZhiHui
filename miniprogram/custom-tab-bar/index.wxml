@@ -1,0 +1,28 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<cover-view class="tab-bar">
+  <cover-view class="tab-bar-border"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <cover-image src="{{selected == index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+    <cover-view style="color: {{selected == index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>
+
+<!--弹出窗口-->
+<view class="cu-modal {{modalName=='Image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url('http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mcaQ2yQEXN9RQv3h40AOUCMidjSxWY3anj6ftE0Dy4dt*sk7ElTV0HUlHVJqE434DA*UhMGyysWVrpluRpjKUeHU!/b&bo=gAc4BIAHOAQDWXw!&rf=viewer_4&t=5');height:300rpx;" bindtap="directToTakePhoto" id="0">
+      <!-- <text class="text-blue text-center">北戴河森林公园湿地</text> -->
+    </view>
+    <view class="bg-img" style="background-image: url('http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mcaQ2yQEXN9RQv3h40AOUCMi59R8Ilj*YwGy33wCe935UNJ*CGIm6XZBQMEwUu2PIebnzA6GP.PlkESaI6uSf.fk!/b&bo=gAc4BIAHOAQDWXw!&rf=viewer_4&t=5');height:300rpx;" bindtap="directToTakePhoto" id="1">
+      <!-- <text class="text-green text-center">昌黎七里海湿地</text> -->
+    </view>
+    <view class="bg-img" style="background-image: url('http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mcRzNIKAG99KUpSUAv7UKNOuC2HCKPzxNlyH4NEZo16FQdQmr4UZMrce2UzU13LVVFImFFlOE5QNl1I5I39ASx30!/b&bo=ugbJA7oGyQMDaUw!&rf=viewer_4&t=5');height:300rpx;" bindtap="directToTakePhoto" id="2">
+      <!-- <text class="text-red text-center">山海关石河入海口湿地</text> -->
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">关闭</view>
+    </view>
+  </view>
+</view>
+<!--弹出窗口-->
+

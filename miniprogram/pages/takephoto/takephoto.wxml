@@ -1,0 +1,116 @@
+<!--miniprogram/pages/takephoto/takephoto.wxml-->
+<cu-custom wx:if="{{stepRequire==1000}}" bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">北戴河森林公园湿地</view></cu-custom>
+<cu-custom wx:if="{{stepRequire==2000}}" bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">昌黎七里海湿地</view></cu-custom>
+<cu-custom wx:if="{{stepRequire==3000}}" bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">山海关石河入海口湿地</view></cu-custom>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadAnalyzeModal}}">
+  <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+  <image src='/images/logo.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>分析中...</view>
+</view>
+<!--以下为图像显示及AI分析结果块-->
+<view wx:if="{{watchBirdStage==0}}" class="cu-card">
+  <swiper class="card-swiper;height: 500rpx"circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" >
+  <swiper-item wx:if="{{stepRequire==1000}}" wx:for="{{beidaihe}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+  <swiper-item wx:if="{{stepRequire==2000}}" wx:for="{{changli}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+  <swiper-item wx:if="{{stepRequire==3000}}" wx:for="{{shanhaiguan}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+  </swiper>
+  <view class="cu-item shadow">
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      观鸟需行走<text class="text-blue">{{stepRequire}}</text>步
+    </view>
+  </view>
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      当前可用步数为<text class="text-blue">{{stepAvailable}}</text>
+    </view>
+  </view>
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <text wx:if="{{stepAvailable<stepRequire}}" class="cuIcon-title text-blue">可用步数不足</text>
+      <text wx:if="{{stepAvailable>=stepRequire}}" class="cuIcon-title text-blue">点击开始观鸟开启摄像头</text>
+    </view>
+  </view>
+</view>
+</view>
+<view wx:if="{{watchBirdStage>0}}" class="cu-card">
+  <view class="cu-item shadow">
+    <navigator url="./cropper/cropper?filePath={{filePath}}">
+    <view wx:if="{{watchBirdStage==2}}" class="image">
+        <image src="{{filePath}}" mode="widthFix" style="width: 100%; height: 300px;"></image>
+    </view>
+    </navigator>
+    <camera wx:if="{{watchBirdStage==1}}" device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-blue"></text>AI检测结果如下
+      </view>
+    </view>
+    <block wx:for="{{picLabels}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar lg round bg-gradual-blue">
+          <text class="avatar-text">{{item.Name}}</text>
+        </view>
+        <view class="content flex-sub">
+          <view >可信程度：{{item.Confidence}}</view>
+          <view class="cu-progress round margin-top">
+            <view class="bg-gradual-blue" style="width:{{item.Confidence}}%;"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </block> 
+  </view>
+</view>
+<!--以上为图像显示及AI分析结果块-->
+<button wx:if="{{watchBirdStage==0&&stepAvailable>=stepRequire}}" bindtap="startObserveBird">开始观鸟</button>
+<view wx:if="{{watchBirdStage==0}}" class="cu-chat">
+  <view class="cu-item">
+    <view class="bg-img margin-left radius" style="background-image:url(http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mccDGFYE1XoLUyj*vvWLm7zzu1PrWfgFt95fuOpTkz*JIEpZtj9msUJGHHHx.xUU3dLc.KP4m*viO0igshtp5l.0!/b&bo=dwXfB3cF3wcDORw!&rf=viewer_4&t=5);height:200rpx;width:130rpx"></view>
+    <view class="main">
+      <view class="content">
+        <view>观鸟需要耐心哦~快快走起来吧！</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{watchBirdStage==1}}" class="padding flex flex-direction">
+  <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="takePhoto">拍照</button>
+</view>
+<view wx:if="{{watchBirdStage==2}}" class="padding flex flex-direction">
+  <button class="cu-btn bg-darkGray margin-tb-sm lg" bindtap="startObserveBird">重新拍摄</button>
+  <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="upLoadPic">上传</button>
+  <view class="cu-chat">
+    <view class="cu-item">
+      <view class="bg-img margin-left radius" style="background-image:url(http://m.qpic.cn/psc?/V51o6AfO138S3m3lNdc10hOSZE3K0uof/45NBuzDIW489QBoVep5mccDGFYE1XoLUyj*vvWLm7zzu1PrWfgFt95fuOpTkz*JIEpZtj9msUJGHHHx.xUU3dLc.KP4m*viO0igshtp5l.0!/b&bo=dwXfB3cF3wcDORw!&rf=viewer_4&t=5);height:200rpx;width:130rpx"></view>
+      <view class="main">
+        <view class="content">
+          <view>点击图片可以进行裁剪，尽量使鸟儿占据整个画面哦！</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

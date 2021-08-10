@@ -1,0 +1,37 @@
+/* miniprogram/pages/stage/stage.wxss */
+/*tabbar height*/
+.tab-bar-height {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+}
+/*tabbar height*/
+.barheight{
+	height: 130rpx;
+}
+
+.swiper-item {
+	width: 100%;
+	display: block;
+	height: 100%;
+	margin: 0;
+	pointer-events: none;
+}
+.screen-swiper {
+	min-height: 1200rpx;
+}
+.barheight{
+	height: 130rpx;
+	
+}
+/*cartoon actor*/
+.center{
+	display:flex;
+	justify-content:center;
+	}
+.avatar{
+	margin-right: 8rpx;
+	margin-top: 102rpx;
+	border-radius:50%;
+}

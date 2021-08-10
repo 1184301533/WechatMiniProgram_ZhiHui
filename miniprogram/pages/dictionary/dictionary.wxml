@@ -1,0 +1,53 @@
+<!--miniprogram/pages/dictionary/dictionary.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">观鸟名词</view></cu-custom>
+<!-- <mp-indexList class="city__list" list="{{list}}" bindchoose="onChoose">
+    <view class="page">
+        <view class="page__hd">
+            <view class="page__title">观鸟</view>
+            <view class="page__desc">名词解释</view>
+        </view>
+            <view>
+             <view class="weui-footer__link" bindtap='category1'>鸟类形态和结构</view>
+             <view class="weui-footer__link" bindtap='category2'>鸟类生态和行为</view>
+             <view class="weui-footer__link" bindtap='category3'>观鸟活动</view>
+            </view>
+        <view class="page__bd">
+        </view>
+    </view>
+</mp-indexList>
+<view class="weui-footer">
+      <view class="weui-footer__links">
+        <navigator url="../addWord/addWord" class="weui-footer__link">添加词汇</navigator>
+      </view>
+    <view class="weui-footer__text">Copyright © 2021 膨胀大鸽子团队</view>
+</view> -->
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+    <view>
+      <view class="weui-footer__link" bindtap='category1'>鸟类形态和结构</view>
+      <view class="weui-footer__link" bindtap='category2'>鸟类生态和行为</view>
+      <view class="weui-footer__link" bindtap='category3'>观鸟活动</view>
+    </view>
+</view>
+<scroll-view scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}" style="height:calc(100vh - {{CustomBar}}px - 50px)" scroll-with-animation="true" enable-back-to-top="true">
+  <block wx:for="{{list}}" wx:key>
+    <view class="padding indexItem-{{list[index].alpha}}" id="indexes-{{list[index].alpha}}" data-index="{{list[index].alpha}}">{{list[index].alpha}}</view>
+    <view class="cu-list menu-avatar no-padding">
+      <view bindtap="onChoose" id="{{list[index].subItems[sub].detail}}" class="cu-item" wx:for="{{list[index].subItems.length}}" wx:key wx:for-index="sub">
+        <view class="cu-avatar round lg">{{list[index].alpha}}</view>
+        <view bindtap="setWordName" id="{{list[index].subItems[sub].name}}" class="content">
+          <view class="text-grey">
+            {{list[index].subItems[sub].name}}
+          </view>
+          <!-- <view class="text-gray text-sm">
+            {{list[index].subItems[sub].detail}}
+          </view> -->
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<view class="indexBar" style="height:calc(100vh - {{CustomBar}}px - 50px)">
+  <view class="indexBar-box" bindtouchstart="tStart" bindtouchend="tEnd" catchtouchmove="tMove">
+    <view class="indexBar-item" wx:for="{{list}}" wx:key id="{{index}}" bindtouchstart="getCur" bindtouchend="setCur">{{list[index].alpha}}</view>
+  </view>
+</view>

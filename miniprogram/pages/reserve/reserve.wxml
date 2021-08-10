@@ -1,0 +1,222 @@
+<!--miniprogram/pages/reserve/reserve.wxml-->
+<!--导航标签-->
+<scroll-view scroll-x class="bg-gradual-blue nav">
+  <view class="cu-bar barheight"></view>
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item.title}}
+    </view>
+  </view>
+</scroll-view>
+<!--导航标签-->
+
+<!--鸟类生境页面-->
+
+<view wx:if="{{TabCur==0}}">
+<swiper class="screen-swiper">
+<swiper-item>
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>秦皇岛鸟类生境</view>
+    <map
+	  class="map"
+    id="map"
+    markers="{{markers}}"
+    min-scale="{{minScale}}"
+    max-scale="{{maxScale}}"
+	  latitude="{{location.latitude}}"
+  	longitude="{{location.longitude}}"
+  	scale="{{scale}}"
+  	setting="{{setting}}"
+  	enable-overlooking="{{isOverLooking}}"
+    enable-3D="{{is3D}}"
+    show-compass="{{isShowCompass}}"
+    show-scale="{{isShowScale}}"
+    polygons="{{polygon}}"
+    bindmarkertap="onTapMarker"
+    >
+  </map>
+  <view class="padding flex flex-direction">
+    <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="onChangeView">缩放</button>
+  </view>
+  <view class='text-content'>
+    <view>1.秦皇岛自然环境</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>秦皇岛市位于河北省东北部，北依燕山山脉，南临渤海。海岸线长约130km，沿海与燕山山脉最近距离小于10km，北高南抵。主要为平原、沿海、湿地、山地丘陵与沿河湿地相结合的地貌形式。
+    </view>
+    <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      秦皇岛属温带半湿润季风气候，冬季时间较短，全年平均气温8~11℃，全年降水量平均为658mm。
+    </view>
+    <view class='margin-top-sm'>2.独特的滩涂地貌特征</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>以山海关石河入海口和昌黎七里海为代表的湿地由洪水河流与海岸潮汐反复冲刷而形成，既是天然的泄洪通道又可防止周边地域盐碱化。
+    <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>海岸、湿地、山林浑然一体。两块湿地与燕山山脉距离均小于10km，且山势低矮和特定的空气洋流造就了天然的鸟类通道。</view>
+    <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>两处湿地地质均为砂化，软壳生物物种丰富，品类繁多，生物链系统十分完善，是鹬鸻类和鸥科类以及大型涉禽等鸟类的天然觅食地。</view>
+  </view>
+
+</view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>生境</view>
+  <view class='text-content'>
+    <view>1.生境的含义</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>生境指的是鸟类生存的一系列生态环境，包括栖息、繁殖和觅食等各项行为发生的场所。</view>
+    <view class='margin-top-sm'>2.生境的类型</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>从森林到荒漠，从海洋到高原，从基地到热带雨林，每一种独特的生镜中都生活着独特的鸟类。不同鸟类所需的生境各不相同，同一种鸟类在不同状态下所需的生境也不相同。因此，了解鸟类与生境之间的关系能够更好地帮助我们对鸟类进行辨识。比如，常年生活在高原的鸟类一般不会出现在低海拔地区，而喜欢藏匿在密林中的鸟类也不太可能出现在开阔地带。当观察者有意寻找某一特定鸟类时，寻找其适合的生境是最有效的方法。同样地，当形态上的判断依据不足时，我们也可以通过鸟类出现的生境类型来辅助判断或进行排除。
+    </view>
+  </view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>季节、昼夜与潮汐</view>
+  <view class='text-content'>
+    <view>对于观察者而言，掌握鸟类的活动规律是一项非常重要的技能。而鸟类的活动会受到许多因素的影响，其中最显著的就是季节、昼夜与潮汐。</view>
+    <view class='margin-top-sm'>1.季节</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>随季节不同而在不同的生境之间进行周期性迁徙的鸟类被称为候鸟。有些鸟类会沿纬度进行南北迁徙，拥有不同的繁殖地和越冬地，如鸻形目的水鸟。有些鸟类会沿海拔梯度进行垂直迁徙，如生活在高海拔的山地林鸟。</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>根据多年来的观察和研究结果，学者们已经绘出世界鸟类的九大迁徙路线。对于同一片区域而言，鸟类有冬候鸟、夏候鸟、留鸟和旅鸟之分，即不同季节所能记录的鸟类不尽相同。所以，季节因素也是辅助鸟类识别的重要手段之一。</view>
+    <view class='margin-top-sm'>2.昼夜</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>不同鸟在一天中的活动时间也不相同，据此，鸟类可以分为日行性和夜行性两大类。通过进一步观察，我们还能够发现其中更多细微的差别，如许多日行性鸟类在清晨更为活跃，有些日行性猛禽多在正午时分盘旋于高空，而部分夜行性鸟类在黄昏就开始变得活跃。
+    </view>
+    <view class='margin-top-sm'>3.潮汐</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>沿海水域或滩涂是许多水鸟赖以生存的觅食场所，它们的活动规律与潮汐密切相关。因此，观察水鸟的一个重要准备工作就是了解潮汐涨落的时间。就沿海水域而言，低潮时往往才是适合水鸟觅食的时间；潮水上涨后，水鸟可能会飞到周边的鱼塘或盐田中栖息。因此，观察者需要根据自己的活动地点来进行合理的时间规划。
+    </view>
+  </view>
+</view>
+</swiper-item>
+</swiper>
+</view>
+<!--鸟类生境页面-->
+
+<!--鸟类保护页面-->
+<view wx:if="{{TabCur==1}}">
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+    <view class='text-center margin-bottom text-lg  text-grey'>鸟类保护</view>
+    <!-- <view class="margin flex">
+      <view class="bg-black flex-sub margin-right radius shadow-lg">
+        <view class="bg-img" style="background-image:url({{zhendanyaqueP}});height:300rpx">
+        </view>
+      </view>
+      <view class="bg-black flex-sub radius shadow-lg">
+        <view class="bg-img" style="background-image:url({{zhendanyaqueP}});height:300rpx">
+        </view>
+      </view>
+    </view> -->
+    <view class='text-content'>
+      <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸟类的保护主要体现在栖息地保护和物种保护两个方面。在栖息地保护方面，中国建立了相对完善的自然保护地体系，包括自然保护区、森林公园、湿地公园、海洋公园和国家公园等。自然保护区和国家公园是最主要和最重要的自然保护地类型。特别是自然保护区的建设，为中国的鸟类保护提供了强有力的保障。</view>
+      <view class="padding flex flex-direction">
+        <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="directToRegulations">国家湿地保护管理规定</button>
+      </view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>早在1956年，中国就成立了第一个自然保护区－鼎湖山国家级自然保护区。截至2019年9月底，中国已建成各类自然保护区2750个，总面积达到147万k㎡,占中国陆域国土面积的15%.自然保护区根据其重要性可分为国家级自然保护区和地方级自然保护区。根据主要保护对象的不同，又可分为生态系统类型保护区、生物物种保护区和自然遗迹保护区三类。其中扎龙国家级自然保护区、崇明东滩鸟类国家级自然保护区、盐城沿海滩涂珍禽国家级自然保护区、乌岩岭国家级自然保护区、东洞庭湖国家级自然保护区、青海湖国家级自然保护区等都是中国重要的鸟类自然保护区。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>近年来，中国开始开展国家公园体制试点，推动建立以国家公园为主体、自然保护区为基础、各类自然公园为补充的自然保护地体系。在物种保护方面，世界自然保护联盟（IUCN)物种生存委员会召集科学家志愿者，自1963年开始，为全球濒危物种编制评估报告《IUCN濒危物种红色名录》。该名录从最初不定期出版，逐步发展为每年出版数部，到现在定期更新网络版。根据各物种的个体总数、数量下降速度、地理分布、群族分散程度等准则，该名录将物种分为9个等级，依次为灭绝（EX)、野外灭绝（EW)、极危（CR)、濒危（EN)、易危（VU)、近危（NT)、无危（LC)、数据缺乏（DD)和未评估（NE).其中列入极危（CR)、濒危（EN)和易危（VU)的物种被认为是受胁物种。长期以来，《IUCN濒危物种红色名录6》为全球生物多样性的评估和保护提供了重要基础。</view>
+      <view class="padding-sm flex flex-wrap">
+        <view class="padding-sm" wx:for="{{IUCN}}" wx:key>
+          <view class="cu-tag bg-{{item.color}}">{{item.level}}</view>
+        </view>
+      </view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>在具体保护管理中，根据《中华人民共和国野生动物保护法》（1989年实施，2018年修订），中国对珍贵、濒危的野生动物实行重点保护。国家重点保护的野生动物分为一级重点保护野生动物和二级重点保护野生动物。此外，国家还制定了《国家保护的有重要生态、科学、社会价值的陆生野生动物名录》（“三有”动物），各省、自治区、直辖市也相应制定了地方重点保护的野生动物名录。2020年初，国家进一步立法将所有野生鸟类纳入保护管理范畴。</view>
+      <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>20世纪80年代，随着中国改革开放，国外观鸟者开始进入中国观鸟，也将观鸟这一活动引入中国。90年代，中国内地开始出现本土观鸟爱好者。随着中国经济的发展，各类观鸟指南的先后出版，以及望远镜和数码相机的便捷获取，中国内地的观鸟人群快速发展，各个省市相继建立了观鸟组织。庞大的观鸟人群和频繁的观鸟活动，为了解鸟类物种的分布、数量和受胁状况提供了大量的数据。从这个角度来说，观鸟已不再是一项休闲活动，而是具备了公民科学的性质。自观鸟活动开展以来，不同地区乃至全国的鸟类新记录不断呈现，原有鸟类分布的信息也在不断被更新。观鸟组织已经逐渐接手各地的鸟类本底调查，这也促使鸟类学家转向更加专业的科学研究领域。毫无疑问，和世界各地一样，中国的观鸟活动正日益推动着鸟类学的快速发展。</view>
+    </view>
+  </view>
+  <view class="padding flex flex-direction">
+    <button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="directToTimeline">秦皇岛鸟类发现大事记</button>
+  </view>
+</view>
+<!--观鸟指南页面-->
+<view wx:if="{{TabCur==2}}">
+<swiper class="screen-swiper">
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>鸟类识别方法</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>形态是鸟类识别的第一要素，但并不是唯一的要素。我们通常从以下三个方面来判断一只鸟的种类。</view>
+    <view class='margin-top-sm'>1.体型</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>当我们看到一只鸟时，最先注意到的往往是它的体型。我们可以大致估算一下它的体长和翼展，以及身体各个部位的长度。不过，在野外精确估测长度并不是一件容易的事情，而参照描述法就可以很好地弥补这一不足——比如“喙较粗”“约为麻雀的两倍体长”“翼展大于两倍体长”“喙长约与眼先的长度相等”这样的描述。相比羽色，体型以及身体各部分的比例是更为重要的辨识方法。有时候，喙的形状和长度，身体的轮廓线都是简单而直接的辨识要点，需要牢记在心。</view>
+    <view class='margin-top-sm'>2.羽色</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>羽色也是在野外第一眼就能捕捉到的鸟类信息。鸟类的身体颜色中包含的信息是非常复杂的。除了种类之外，我们还能通过鸟类的颜色判断出它们的性别、年龄、换羽和健康状况，这其中还包含与季节、行为相关的信息。
+    </view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>正确描述一只鸟的颜色有一个前提，即区分并记忆鸟类的各个身体部位。在观察时，我们需要记下不同色块在鸟类身上的分布状况。值得注意的是，同一种鸟在不同季节会呈现出不同的体色，因而了解饰羽的概念以及非繁殖羽和繁殖羽的区别，将有助于我们在识别鸟类时做出更准确的判断。当然，有时鸟类纷繁复杂的羽色搭配和羽毛纹路会让人很难分辨。此时羽色作为野外特征反而没有体型和外表轮廓这些特征来得更为直接。
+    </view>
+    <view class='margin-top-sm'>3.行为</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>行为是辅助鸟类识别的另一重要手段。在实地观察中，我们常常会发现不同鸟类具有完全不同的行为模式。例如，噪鹛喜欢在茂密的林下层翻动树叶，燕子多在空中翻飞觅食，喜鹊会在高大乔木或电线杆顶上筑巢等。还有，不同鸟类的飞行、站立、休息、觅食动作都有物种或者类群的独特“气质”，其中一些典型的行为往往能帮助或验证我们的判断。这方面需要观察者积累一定的经验。
+    </view>
+  </view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>器材设备</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'>1.望远镜</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>大多数鸟类平时都与人类保持着一定的距离，而远距离观察鸟类的最佳工具莫过于望远镜。一台合适的望远镜能让鸟类观察达到最佳效果。</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>不同环境下的观鸟活动对望远镜有不同的需求。倍数越大，视野越小；口径越大，亮度越大，也越重。一般来说，倍数为8~12倍、口径为30~50mm的双筒望远镜适合于中等距离的鸟类观察。距离较远的鸟类则需要倍数为25~75倍、口径为60~100mm的单筒望远镜，比如观察滩涂上的水鸟。手持的双筒望远镜视野较大、灵活性强，对于观察活动频率较高的鸟类更具优势。单筒望远镜倍数高、重量大，但视野较小且不稳，需要额外的三脚架进行固定，适用于观察活动频率较低的鸟类。口径和倍数较小的便携望远镜，适用于老人和儿童，但其视野范围和亮度也会随之降低。</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>当然，作为野生动物，鸟类通常活动迅速，或者行为隐匿，需要熟练地掌握望远镜的使用方法才能更好地对其进行观察。鸟类的鸣叫声以及树木、草丛不规则的抖动，也都有助于我们找到它们的踪迹。</view>
+    <view class='margin-top-sm'>2.照相机</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>对于一些形态上难以辨认的鸟类，我们往往需要照片的辅助。另外，一些新纪录的确认也需要有照片佐证。因此，照相机也是鸟类观察中的常用器材。通常来说拍摄鸟类需要长焦镜头，定焦或变焦均可。如今，一些智能手机也具备了长焦摄像功能，同样能用于拍摄鸟类。
+    </view>
+    <view class='margin-top-sm'>3.录音设备</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>鸣声也是鸟类观察活动中不可忽视的因素。我们可以利用智能手机中的录音软件或录音笔来记录鸟类的鸣声。
+    </view>
+    <view class='margin-top-sm'>4.定位仪器</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>我们还能用手机APP或专业的GPS设备来记录观鸟活动中的位置和路线信息。
+    </view>
+  </view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>记录方法</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>一份完整的鸟类观察记录应包含以下几方面的要素：</view>
+    <view class='margin-top-sm'>1.种类、数量和状态</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>一般来说，种类是最关键的要素，其次是鸟类的数量。这两项信息能为某一区域或某一时间点的鸟类活动提供具有参考价值的科学记录。另外，某些具体或特殊的情况也值得我们记录下来，比如羽色、雌雄、特殊行为和其他有价值的信息，这将有利于我们进一步了解鸟类的活动规律和生态信息。</view>
+    <view class='margin-top-sm'>2.地点、时间、生境和记录人员</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>除了鸟类本身的信息之外，观察地点、时间、生境和记录人员也是必不可缺的要素。鸟类的种类、数量和行为等各个方面的观察结果都应该与相应的地点、时间和生境联系在一起。
+    </view>
+    <view class='margin-top-sm'>3.记录检索与分享</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>观察者可以通过国内外的观鸟记录公开网站（如中国观鸟记录中心 <view class="content" bindtap="CopyLink" data-link="www.birdreport.cn"><text class="text-grey">www.birdreport.cn</text></view>和ebird）来检索特定地点、特定时间的鸟类记录，也可以将自己的记录上传到互联网。通过这样的记录共享，世界各地的学者与爱好者都能从中获得有价值的鸟类数据。
+    </view>
+  </view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>环志的观察与报告</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'>1.环志</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>环志是研究候鸟迁徙动态及其规律的一种重要手段。研究人员把由镍铜合金或铝镁合金制成的金属环，以及彩色塑料环佩戴在鸟类身上，并将其各项数据记录在相应的环志记录卡上。通过环志回收，研究人员能够得到候鸟的迁徙路线、年龄以及种群动态等宝贵资料。</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>金属环通常被戴在鸟类的跗跖，即脚环，但在一些特殊情况下，鸟类的颈部、翅根、鼻孔等处也可以用于环志。在水鸟环志中，还经常使用彩色塑料脚环，不同个体的脚环上有不同的编号和颜色组合，我们也将其称为旗标。观察者们可以通过旗标的颜色来判断候鸟被环志的地点。
+    </view>
+    <view class='margin-top-sm'>2.观察与报告</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>每一位观鸟者都有义务积极主动地向全国鸟类环志中心提供其观察和收集到的鸟类环志信息。通过这些宝贵有趣的资料，每一位观鸟者都能切身参与到候鸟迁徙的科学研究之中。
+    </view>
+  </view>
+</view>
+</swiper-item>
+<swiper-item>
+  <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>观鸟准则和伦理</view>
+  <view class='text-content'>
+    <view class='margin-top-sm'>1.实事求是</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>观鸟活动中最基本的准则就是实事求是。观察者应根据实际情况，准确地记录观察鸟类、时间、地点和人员信息。在野外，限于角度、光线、技巧等因素，无法看清且难以准确识别鸟种都是再正常不过的事情。当观察者无法确定具体的种类时，应在笔记中做出相应的描述，不做强行定种。当观察者无法确定准确的数量时，可以根据现场情况进行合理估测。</view>
+    <view class='margin-top-sm'>2.避免干扰</view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>尽可能降低人为干扰是观鸟活动的伦理依据。在正常情况下，观察者不应做出引诱、驱赶、投食、过分靠近野生鸟类以及破坏栖息地等举动。
+    </view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>因为有些鸟可能会因气候恶劣、体能衰弱而暂时停栖某一地区，此时，它们急需休息调养，如果人类为了看清或拍到满意的照片而追逐鸟类，可能会导致其步向死亡。
+    </view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>育维是鸟类生活中最脆弱的阶段，在孵卵及育雏期间的过度干扰很可能会导致亲鸟弃巢，繁殖失败。因此，在遇到鸟巢及孵卵、育雏的亲鸟时，需保持足够距离。并缩短观察时间，以免干扰亲鸟的行为，特别需要强调的是，为了拍到照片而修剪鸟巢周围的植被是极为错误的行为，通常会导致雏鸟死亡。
+    </view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>若遇到上述情况，有条件者可以采取相应的举措予以制止。对于濒危或某些特殊鸟类，观察者有责任不公开记录或对具体地点进行保密，防止发生进一步的人为干扰。
+    </view>
+    <view class='margin-top-sm'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>无论是观鸟还是拍摄鸟类，我们都需要牢记：鸟类的福祉永远大于我们看到它或是拍到它！
+    </view>
+  </view>
+</view>
+</swiper-item>
+</swiper>
+</view>
+
+<view class="tab-bar-height"></view>
+
+
+
+

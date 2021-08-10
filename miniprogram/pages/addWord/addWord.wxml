@@ -1,0 +1,31 @@
+<!--miniprogram/pages/addWord/addWord.wxml-->
+<form catchsubmit="formSubmit">
+<text>请选择词汇类别</text>
+ <radio-group name="radio" bindchange="radioChange">
+          <label><radio value="1"checked="true"/>鸟类形态和结构</label>
+          <label><radio value="2"/>鸟类生态和行为</label>
+          <label><radio value="3"/>观鸟活动</label>
+        </radio-group>
+<text>请在下方输入词汇全称</text>
+<text>如：耳羽（Ear coverts）</text>
+<input bindinput="bindFullName" type="text" placeholder='输入词汇（中英）' />
+<text>请在下方输入该词汇的解释</text>
+<input bindinput="bindWordContent" type="text" placeholder='输入详细信息' />
+<text>请在下方输入该词汇的汉语拼音</text>
+<text>每个格输入一个音节</text>
+<input bindinput="pinyin1" type="text" placeholder='音节1' />
+<input bindinput="pinyin2" type="text" placeholder='音节2' />
+<input bindinput="pinyin3" type="text" placeholder='音节3' />
+<input bindinput="pinyin4" type="text" placeholder='音节4' />
+<input bindinput="pinyin5" type="text" placeholder='音节5' />
+<input bindinput="pinyin6" type="text" placeholder='音节6' />
+
+
+
+    <view >
+    
+        <button bindtap="onAdd">提交</button>
+        
+      </view>
+      
+    </form>

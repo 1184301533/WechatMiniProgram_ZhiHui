@@ -1,0 +1,10 @@
+<!--miniprogram/pages/welcome/welcome.wxml-->
+<swiper indicator-dots="true"
+autoplay="true">
+        <block wx:for="{{imgs}}" wx:for-index="index">
+          <swiper-item class="swiper-items"  >
+            <image class="swiper-image" src="{{item}}" mode='aspectFill'></image>
+            <button class="button-img bg-gradual-blue" bindtap="start" >立即体验</button>
+          </swiper-item>
+        </block>
+    </swiper>

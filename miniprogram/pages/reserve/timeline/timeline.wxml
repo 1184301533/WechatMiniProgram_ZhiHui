@@ -1,0 +1,173 @@
+<!--miniprogram/pages/reserve/timeline/timeline.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">秦皇岛鸟类发现大事记</view>
+</cu-custom>
+<view class="cu-timeline">
+  <view class="cu-time">1890年</view>
+  <view class="cu-item text-blue">
+    <view class="bg-blue content">
+      国外科学家在秦皇岛开始观鸟活动，并有观察记录收藏于剑桥大学图书馆。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1910年</view>
+  <view class="cu-item text-purple">
+    <view class="bg-purple content">
+      丹麦学者在秦皇岛地区研究鸟类迁徙。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1913年</view>
+  <view class="cu-item text-mauve">
+    <view class="bg-mauve content">
+      <text>2月17日</text> 灰眉岩鹀在秦皇岛发现（当时戈式岩鹀被作为灰眉岩鹀的亚种）。
+    </view>
+    <view class="bg-pink content">
+      <text>2月17日</text> 雪鹀在联峰山被发现。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1936年</view>
+  <view class="cu-item text-mauve">
+    <view class="bg-mauve content">
+      中国生物学家寿振黄先生在秦皇岛研究鸟类并出版了中国第一部鸟类专著——《河北鸟类志》。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1945年</view>
+  <view class="cu-item text-purple">
+    <view class="bg-purple content">
+      第一部关于秦皇岛鸟类介绍的专题文章由丹麦科学家在欧洲发表。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1957年</view>
+  <view class="cu-item text-blue">
+    <view class="bg-blue content">
+      我国著名鸟类学家郑作新教授在昌黎对麻雀进行了专题研究并发表《麻雀食物分析报告》，由此将麻雀从“四害”中解脱出来，使鸟类是人类的朋友得以科学印证。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1978年</view>
+  <view class="cu-item text-cyan">
+    <view class="bg-cyan content">
+      中华凤头燕鸥首次在秦皇岛发现（马丁·威廉姆斯）。
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-timeline">
+  <view class="cu-time">1985年</view>
+  <view class="cu-item text-green">
+    <view class="bg-green content">
+      在北戴河记录迁徙东方白鹳2729只，改写了国际上该物种仅存1000只左右的记录。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1986年</view>
+  <view class="cu-item text-olive">
+    <view class="bg-olive content">
+      在秦皇岛地区上空有14500只鹊鹞集群迁徙。如此多猛禽集体迁徙在全球相当罕见，由此秦皇岛地区在国际上更加奠定了“观鸟圣地”之美誉。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1989年</view>
+  <view class="cu-item text-yellow">
+    <view class="bg-yellow content">
+      <text>3月30日</text> 秦皇岛首次记录黑雁。
+    </view>
+    <view class="bg-orange content">
+      <text>4月1日</text> 马丁·威廉姆斯发现绿翅鸭的美洲亚种，2013年该亚种被升级为独立种——美洲绿翅鸭，并成为中国鸟类新纪录。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1993~2003年</view>
+  <view class="cu-item text-red">
+    <view class="bg-red content">
+      秦皇岛地区已经成为欧美等国的“成熟观鸟线路”，大批观鸟者涌入中国秦皇岛，为当地经济社会发展创造了新的亮点，在此期间，如金眶鹟莺、橙胸姬鹟、小鸦鹃、铜蓝鹟等十余种鸟类被发现，秦皇岛鸟类种数突破406种。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1997年</view>
+  <view class="cu-item text-orange">
+    <view class="bg-orange content">
+      国内首批鸟类环志站之一的秦皇岛鸟类环志站成立。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">1999年</view>
+  <view class="cu-item text-yellow">
+    <view class="bg-yellow content">
+      首届“中国·北戴河国际观鸟大赛”开始举办。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">2004年</view>
+  <view class="cu-item text-olive">
+    <view class="bg-olive content">
+      《秦皇岛鸟类》由河北大学吴芳教授出版发行，其中收集鸟种385种。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">2006年</view>
+  <view class="cu-item text-green">
+    <view class="bg-green content">
+      <text>12月</text> 秦皇岛市观爱鸟协会正式注册成立，原市常委、市委秘书长、市政协副主席范怀良出任名誉会长，刘学忠出任秘书长。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">2010年</view>
+  <view class="cu-item text-cyan">
+    <view class="bg-cyan content">
+      秦皇岛鸟类博物馆和秦皇岛野生动物救护中心相继建成。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">2011年</view>
+  <view class="cu-item text-blue">
+    <view class="bg-blue content">
+      刘学忠、范怀良等编著的《北戴河鸟类图志》出版发行，共收集鸟类影像记录431种。
+    </view>
+  </view>
+</view>
+
+<view class="cu-timeline">
+  <view class="cu-time">2011~2013年</view>
+  <view class="cu-item text-purple">
+    <view class="bg-purple content">
+      秦皇岛地区观鸟爱好者和鸟类保护志愿者队伍与日俱增，观鸟人数和次数创历史新高。由于大批爱好者和志愿者参与，五十余种新鸟种，如小凤头燕鸥、姬滨鹬、杂色山雀、黄爪隼、白腹军舰鸟等被载入记录，由此秦皇岛地区鸟种种数突破500种，在全国名列前茅。
+    </view>
+  </view>
+</view>
